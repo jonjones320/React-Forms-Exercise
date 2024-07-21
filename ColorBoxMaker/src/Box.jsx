@@ -9,7 +9,7 @@ const deleteBox = () => {removeBox(id)};
       id={id} 
       className="Box-Main"
       style={{
-        "background-color" : color, 
+        "backgroundColor" : color, 
         "width" : width,
         "height" : height
       }}>

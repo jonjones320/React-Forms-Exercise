@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 
-const NewBoxForm = ({ addBox }) => {
+const NewTodoForm = ({ addTodo }) => {
   const INITIAL_STATE = {
-    color: '',
-    height: '',
-    width: ''
+    task: ''
   }
   const [formData, setFormData] = useState(INITIAL_STATE);
   const handleChange = (e) => {
@@ -16,45 +14,27 @@ const NewBoxForm = ({ addBox }) => {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    addBox({ ...formData });
+    addTodo({ ...formData });
     setFormData(INITIAL_STATE)
   }
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="color">Color</label>
+      <label htmlFor="task">Task</label>
       <input
-        id="color"
+        id="task"
         type="text"
-        name="color"
-        placeholder="Box Color"
-        value={formData.color}
+        name="task"
+        placeholder="New Task"
+        value={formData.task}
         onChange={handleChange}
       />
-      <label htmlFor="height">Height:{formData.height}</label>
-      <input
-        id="height"
-        type="text"
-        name="height"
-        placeholder="Box Height"
-        value={formData.height}
-        onChange={handleChange}
-      />
-      <label htmlFor="width">Width:{formData.width}</label>
-      <input
-        id="width"
-        type="text"
-        name="width"
-        placeholder="Box Width"
-        value={formData.width}
-        onChange={handleChange}
-      />
-      <button>Add Box</button>
+      <button>Add Task</button>
     </form>
   )
 
 }
 
-export default NewBoxForm;
+export default NewTodoForm;
 
 

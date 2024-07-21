@@ -13,12 +13,26 @@ const BoxList = () => {
   const addBox = (newBox) => {
     setItems(boxes => [...boxes, { ...newBox, id: uuid() }])
   }
+
+  const removeBox = (id) => {
+    setBoxes(boxes => boxes.filter(box => box.id !== id));
+  }
+
   return (
     <div>
       <h3>Box List</h3>
       <NewBoxForm addBox={addBox} />
       <div>
-        {boxes.map(({ id, color, width, height }) => <Box id={id} color={color} width={width} height={height} key={id} />)}
+        {boxes.map(({ id, color, width, height }) => 
+          <Box 
+            id={id} 
+            color={color} 
+            width={width} 
+            height={height}
+            removeBox={removeBox} 
+            key={id} 
+          />
+        )}
       </div>
     </div>
   )

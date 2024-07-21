@@ -1,6 +1,8 @@
 import React from "react";
 
-const Item = ({ id, color, width, height }) => {
+const Item = ({ id, color, width, height, removeBox }) => {
+
+const deleteBox = () => {removeBox(id)};
 
   return (
     <div 
@@ -11,6 +13,11 @@ const Item = ({ id, color, width, height }) => {
         "width" : width,
         "height" : height
       }}>
+        <button 
+          onClick={deleteBox}
+          className="Box-Delete-Button">
+            X
+        </button>
     </div>
   )
 }

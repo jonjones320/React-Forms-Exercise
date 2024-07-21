@@ -8,10 +8,10 @@ const NewBoxForm = ({ addBox }) => {
   }
   const [formData, setFormData] = useState(INITIAL_STATE);
   const handleChange = (e) => {
-    const { color, value } = e.target;
+    const { name, value } = e.target;
     setFormData(formData => ({
       ...formData,
-      [color]: value
+      [name]: value
     }))
   }
   const handleSubmit = (e) => {

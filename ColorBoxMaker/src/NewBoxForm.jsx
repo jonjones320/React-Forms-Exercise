@@ -31,7 +31,7 @@ const NewBoxForm = ({ addBox }) => {
         value={formData.color}
         onChange={handleChange}
       />
-      <label htmlFor="height">Quantity:{formData.height}</label>
+      <label htmlFor="height">Height:{formData.height}</label>
       <input
         id="height"
         type="text"
@@ -40,7 +40,7 @@ const NewBoxForm = ({ addBox }) => {
         value={formData.height}
         onChange={handleChange}
       />
-      <label htmlFor="width">Quantity:{formData.width}</label>
+      <label htmlFor="width">Width:{formData.width}</label>
       <input
         id="width"
         type="text"

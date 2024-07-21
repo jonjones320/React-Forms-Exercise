@@ -1,22 +1,16 @@
 import React from "react";
 
-const Item = ({ id, color, width, height, removeBox }) => {
+const Item = ({ id, task, removeTodo }) => {
 
-const deleteBox = () => {removeBox(id)};
+const deleteTask = () => {removeTodo(id)};
 
   return (
-    <div 
-      id={id} 
-      className="Box-Main"
-      style={{
-        "backgroundColor" : color, 
-        "width" : width,
-        "height" : height
-      }}>
+    <div id={ id } className="Todo-Main">
+      <span>{ task }</span>
         <button 
-          onClick={deleteBox}
-          className="Box-Delete-Button">
-            X
+          onClick={deleteTask}
+          className="Todo-Delete-Button">
+          X
         </button>
     </div>
   )
